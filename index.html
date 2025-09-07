@@ -8,88 +8,123 @@
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For social media icons -->
   <style>
-    /* Custom Styles */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background-color: #f4f7fb; color: #333; line-height: 1.6; }
-    header { background-color: #2b2b2b; color: white; padding: 30px 0; text-align: center; }
-    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    header p { font-size: 1.2rem; font-weight: 500; }
-    section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-    .container { display: flex; flex-wrap: wrap; justify-content: space-around; }
-    .skills li { list-style: none; margin: 10px; font-size: 1.1rem; }
-    .social-icons a { margin: 0 10px; color: #333; font-size: 1.5rem; text-decoration: none; transition: color 0.3s; }
-    .social-icons a:hover { color: #007bff; }
-    .skill-set { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); grid-gap: 20px; }
-    .project-card { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-    .project-card h3 { font-size: 1.6rem; margin-bottom: 10px; }
-    .project-card p { font-size: 1.1rem; margin-bottom: 15px; }
-    .button { background-color: #007bff; padding: 10px 20px; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.3s; }
-    .button:hover { background-color: #0056b3; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f5f5f5; color: #333; line-height: 1.6; }
+    
+    header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 40px 50px; 
+      background-color: #1c1c1c; 
+      color: white; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    header h1 { font-size: 2rem; }
+    .nav-links { display: flex; gap: 30px; font-size: 1.1rem; font-weight: 500; }
+    .nav-links a { color: white; text-decoration: none; transition: 0.3s; }
+    .nav-links a:hover { color: #ff6347; }
 
-    /* Animations */
+    section { padding: 60px 30px; max-width: 1200px; margin: 0 auto; }
+    h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 700; }
+
+    .intro { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+    .intro img { width: 200px; height: 200px; border-radius: 50%; }
+    .intro div { max-width: 650px; }
+
+    .skills, .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .skill, .project-card { background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+    .skill h3, .project-card h3 { font-size: 1.5rem; font-weight: 600; }
+    .project-card p { color: #555; }
+    
+    .button { 
+      background-color: #ff6347; 
+      padding: 12px 30px; 
+      color: white; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      transition: 0.3s; 
+    }
+    .button:hover { background-color: #e53d2e; }
+    
+    .social-icons a { margin: 0 15px; color: #333; font-size: 1.5rem; transition: color 0.3s; }
+    .social-icons a:hover { color: #ff6347; }
+
+    footer { background-color: #1c1c1c; color: white; padding: 20px 0; text-align: center; }
+
     .fade-in { animation: fadeIn 2s ease-in; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 
 <body>
+  <!-- Header Section -->
   <header>
     <h1>Awais Muhammad</h1>
-    <p>Full Stack Developer</p>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
+  <!-- About Me Section -->
   <section id="about" class="fade-in">
-    <div class="container">
+    <div class="intro">
       <div>
-        <h2>About Me</h2>
-        <p>Hello! I'm Awais, a Full Stack Web Developer with extensive experience in building high-performance web applications using <strong>.NET Core</strong>, <strong>Angular</strong>, and various other technologies. I have a strong foundation in software development, requirement analysis, and problem-solving. I thrive in both building scalable systems and mentoring others to innovate.</p>
+        <h2>Hi, I’m Awais Muhammad</h2>
+        <p>I’m a Full Stack Developer with expertise in <strong>.NET Core</strong> and <strong>Angular</strong>. I build scalable, user-friendly web applications and specialize in creating seamless user experiences. My goal is to create innovative solutions that solve real-world problems and make the web a better place.</p>
       </div>
-      <img src="images/awais.jpg" alt="Awais Muhammad" style="width: 200px; border-radius: 50%; margin-left: 30px;">
+      <img src="images/awais.jpg" alt="Awais Muhammad">
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills" class="fade-in">
     <h2>Skills</h2>
-    <ul class="skills skill-set">
-      <li>OOP</li>
-      <li>C++</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Angular</li>
-      <li>.Net Core</li>
-      <li>Microsoft SQL</li>
-      <li>ASP.NET MVC</li>
-      <li>ASP.NET Zero</li>
-      <li>Entity Framework</li>
-      <li>Web API</li>
-      <li>Git</li>
-    </ul>
+    <div class="skills">
+      <div class="skill"><h3>.NET Core</h3></div>
+      <div class="skill"><h3>Angular</h3></div>
+      <div class="skill"><h3>JavaScript</h3></div>
+      <div class="skill"><h3>CSS</h3></div>
+      <div class="skill"><h3>ASP.NET MVC</h3></div>
+      <div class="skill"><h3>Entity Framework</h3></div>
+      <div class="skill"><h3>Web API</h3></div>
+      <div class="skill"><h3>Microsoft SQL</h3></div>
+      <div class="skill"><h3>Git</h3></div>
+    </div>
   </section>
 
+  <!-- Projects Section -->
   <section id="projects" class="fade-in">
     <h2>Projects</h2>
-    <div class="container">
+    <div class="projects">
       <div class="project-card">
         <h3>API Development</h3>
-        <p>Developed and maintained APIs using ASP.NET Core to handle real-time data processing for multiple clients.</p>
+        <p>Developed and maintained robust APIs using .NET Core to handle real-time event processing and reporting systems.</p>
         <a href="https://github.com/awais-muhammad/project1" class="button">View Project</a>
       </div>
       <div class="project-card">
         <h3>Single Page Application</h3>
-        <p>Built a dynamic single-page application using Angular and .NET Core, integrating user authentication and API interactions.</p>
+        <p>Created a dynamic, responsive SPA using Angular and .NET Core, integrating user authentication and third-party API services.</p>
         <a href="https://github.com/awais-muhammad/project2" class="button">View Project</a>
       </div>
       <div class="project-card">
-        <h3>Flask Microservice</h3>
-        <p>Designed a secure Flask microservice for handling encryption and decryption operations on sensitive data.</p>
+        <h3>Microservices Architecture</h3>
+        <p>Built scalable microservices using .NET Core and Docker to deploy isolated services for better performance and maintainability.</p>
         <a href="https://github.com/awais-muhammad/project3" class="button">View Project</a>
       </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="fade-in">
     <h2>Contact</h2>
-    <p>Feel free to reach out for collaboration, freelance opportunities, or just to chat!</p>
+    <p>Feel free to reach out for collaboration, job opportunities, or just to connect!</p>
     <div class="social-icons">
       <a href="https://github.com/awais-muhammad" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/awais-muhammad-" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -97,7 +132,8 @@
     </div>
   </section>
 
-  <footer class="fade-in">
+  <!-- Footer Section -->
+  <footer>
     <p>&copy; 2025 Awais Muhammad | All Rights Reserved</p>
   </footer>
 
